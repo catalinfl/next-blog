@@ -10,9 +10,9 @@ const config: Config = {
     themes: [{
       pastel: {
       ...require("daisyui/src/theming/themes")["pastel"],
-      "primary": "#d1c1d7",
-      "secondary": "#b4e9d6",
-      "base-100": "#e0e7ff",
+      "primary": "#62466d",
+      "secondary": "#cfc1d7",
+      "base-100": "#a383af",
     },  
   }],
   },

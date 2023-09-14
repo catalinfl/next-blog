@@ -6,13 +6,13 @@ const Categories = () => {
       <> 
       <p className="text-center font-semibold text-gray-500"> Categories </p>
       </>
-      <div className="mt-4 flex flex-row flex-wrap gap-2">
+      <div className="mt-4 flex w-full flex-row flex-wrap gap-1">
         <div className="badge cursor-pointer">default</div>
         <div className="badge badge-neutral cursor-pointer">neutral</div>
-        <div className="badge badge-primary">primary</div>
-        <div className="badge badge-secondary">secondary</div>
-        <div className="badge badge-accent"> accent</div>
-        <div className="badge badge-ghost">ghost</div>
+        <div className="badge badge-primary cursor-pointer">primary</div>
+        <div className="badge badge-secondary cursor-pointer">secondary</div>
+        <div className="badge badge-accent cursor-pointer"> accent</div>
+        <div className="badge badge-ghost cursor-pointer">ghost</div>
       </div>
     </div>
   )

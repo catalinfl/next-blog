@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Recent from '@/components/Recent'
 import Wall from '@/components/Wall'
+import AuthProvider from '@/providers/AuthProvider'
 
 
 export default function Home() {

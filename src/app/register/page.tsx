@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Register = () => {
+const Register = async () => {
   return (
     <div>Register</div>
   )

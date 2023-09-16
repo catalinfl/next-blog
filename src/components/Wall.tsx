@@ -3,7 +3,7 @@ import Post from './Post'
 
 const Wall = () => {
   return (
-    <div className="flex flex-[5] flex-col gap-2 mt-4">
+    <div className="flex flex-[5] flex-col gap-4 mt-4">
       <Post />
       <Post />
       <div className="flex justify-center">

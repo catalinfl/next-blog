@@ -1,16 +1,18 @@
+import Create from '@/components/Create'
 import Footer from '@/components/Footer'
-import LoginBar from '@/components/LoginBar'
 import Navbar from '@/components/Navbar'
 import React from 'react'
 
-const Login = () => {
+const CreatePost = () => {
   return (
     <> 
     <Navbar />
-    <LoginBar />
+    <Create />
+    <div className="absolute w-full bottom-0"> 
     <Footer />
+    </div>
     </>
   )
 }
 
-export default Login
+export default CreatePost

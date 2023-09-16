@@ -15,7 +15,7 @@ const Post = () => {
             <div className="flex justify-center p-4"> 
             <Image src="/image.jpg" className="cursor-pointer" alt="wall image" width="700" height="400"/>
             </div>
-            <div className="mt-3 px-4 cursor-pointer">
+            <div className="mt-1 px-4 cursor-pointer">
               <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nobis necessitatibus magnam provident architecto aut voluptatem expedita, sunt optio? Sed, soluta? Aut quidem accusantium tempora at dolorum cum similique dolore. Animi nulla repellendus, vel, perspiciatis unde veniam culpa praesentium rerum officia voluptate provident distinctio blanditiis, quo magnam eligendi quas mollitia?... </p>
             </div>
         </div>

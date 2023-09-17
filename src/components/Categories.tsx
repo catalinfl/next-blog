@@ -1,6 +1,21 @@
 import React from 'react'
 
+
+// const getData = async () => {
+//   const res = await fetch("http://localhost:3000/api/getroute", {
+//     cache: "no-cache"
+//   });
+  
+//   if (!res.ok) {
+//     throw new Error("Fetch unavailable")
+//   }
+  
+//   return res.json()
+// }
+
 const Categories = () => {
+
+
   return (
     <div className="bg-white p-6 rounded-sm">
       <> 

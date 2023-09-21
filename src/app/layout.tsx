@@ -1,5 +1,6 @@
 import '@/app/globals.css'
 import AuthProvider from '@/providers/AuthProvider'
+import { PaginationProvider } from '@/providers/PaginationProvider'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -18,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="pastel">
       <body className={inter.className}>
+      <PaginationProvider> 
       <AuthProvider> 
         {children}
-      </AuthProvider>      
+      </AuthProvider>            
+      </PaginationProvider>
       </body>
     </html>
   )

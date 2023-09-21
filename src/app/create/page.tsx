@@ -8,9 +8,9 @@ const CreatePost = () => {
     <> 
     <Navbar />
     <Create />
-    <div className="absolute w-full bottom-0"> 
+    {/* <div className="absolute w-full bottom-0">  */}
     <Footer />
-    </div>
+    {/* </div> */}
     </>
   )
 }

@@ -1,9 +1,10 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { BsSearch } from "react-icons/bs"
 import Link from 'next/link'
 import Hamburger from './Hamburger'
 import { signOut, useSession } from 'next-auth/react'
+import { PaginationContext } from '@/providers/PaginationProvider'
 
 const Navbar = () => {
     const session = useSession()
@@ -12,7 +13,7 @@ const Navbar = () => {
     const handleLogout = () => {
         signOut({ redirect: true, callbackUrl: "/login"})
     }
-
+    
     return (
     <div className="bg-primary font-bold">
     <div className="max-w-[1280px] mx-auto flex justify-center items-center flex-col sm:flex-row p-4"> 

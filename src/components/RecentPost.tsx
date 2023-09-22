@@ -1,13 +1,21 @@
 import React from 'react'
+import { RecentPostsType } from './Recent'
 
-const RecentPost = () => {
+type RecentProps = {
+    post: RecentPostsType
+}
+
+const RecentPost = ({post}: RecentProps) => {
+    
+    const recentData = new Date(post.createdAt).toLocaleString()
+
   return (
     <div className="bg-white p-4 border flex">
         <div className="flex flex-col">
-            <p className="font-medium text-gray-600 justify-center flex text-[1rem]"> 
-                Lorem ipsum dolor sit amet consectetur adipisicing.
+            <p className="font-medium text-gray-600 justify-left flex text-[1rem]"> 
+                {post.title}
              </p>
-             <p className="text-gray-300 text-right mt-4 text-[0.75rem]"> 05.03.2018 13:15:13 </p>
+             <p className="text-gray-300 text-right mt-4 text-[0.75rem]"> {recentData} </p>
         </div>
     </div>
     )

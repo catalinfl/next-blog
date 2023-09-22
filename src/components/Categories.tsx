@@ -33,8 +33,11 @@ const Categories = async () => {
       </>
       <div className="mt-4 flex w-full flex-row flex-wrap gap-1">
         <>
-        {categories?.map((category: Category) =>   
-            <div className={`badge badge-${category.colour} cursor-pointer`} key={category.id}> {category.name} </div>
+        {categories?.map((category: Category) => {
+          return ( 
+            <button className={`badge badge-${category.colour} cursor-pointer`} key={category.id}> {category.name} </button>
+          )
+        }  
           )
         }
         </>

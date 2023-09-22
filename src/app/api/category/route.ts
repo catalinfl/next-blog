@@ -7,6 +7,7 @@ export const GET = async () => {
         
         const catmod = categories.map((category) => {
             const randomN = Math.floor(Math.random() * 6)
+            console.log(randomN)
             var getColour = ""
             switch (randomN) {
                 case 0:

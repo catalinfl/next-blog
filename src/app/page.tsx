@@ -24,6 +24,7 @@ export default function Home({ searchParams }: SearchParams) {
     <div className='flex flex-col max-w-[400px] mt-4 mx-auto sm:flex-[2]'> 
     {/* @ts-expect-error */}
     <Categories />
+    {/* @ts-expect-error */}
     <Recent />
     </div>
     </div>

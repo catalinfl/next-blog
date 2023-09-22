@@ -32,7 +32,7 @@ const Create = () => {
     :
     <div className="bg-white mx-auto flex flex-col rounded-lg max-w-[1080px] w-full my-8 py-4">
         <p className="text-[1.5rem] text-center"> You need to be logged in to create a post. </p>
-        <button className="btn btn-primary flex mx-auto mt-4 p-4" onClick={() => router.push("/login")}> Click here to go to login</button>
+        <button className="btn btn-primary flex mx-auto mt-4 p-4" onClick={() => router.push("/login")}> Click here to go to login </button>
     </div>
   }
   </>

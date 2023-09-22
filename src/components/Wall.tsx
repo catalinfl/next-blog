@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React, { ReactNode, createContext } from 'react'
 import Post from './Post'
 import Pagination from './Pagionation'
 
@@ -13,7 +13,8 @@ export type PostWallProps = {
     description: string;
     img?: string | null;
     views: number;
-    user: string;
+    userName: string;
+    createdAt: Date
   }  
 
 const getPosts = async (page: number) => {
@@ -32,13 +33,8 @@ const getPosts = async (page: number) => {
 
 
 const Wall = async ({ page }: WallProps) => {
-
-  
-
-  const posts = await getPosts(page)
-  
-  console.log(posts)
-  
+  const { posts, count } = await getPosts(page)
+    
   return (
     <div className="flex flex-[5] flex-col gap-4 mt-4">
       {posts.map((post: PostWallProps, key: number) => {
@@ -48,7 +44,7 @@ const Wall = async ({ page }: WallProps) => {
         </div>
         ) 
       })}
-      <Pagination page={page}/>
+      <Pagination page={page} count={count}/>
     </div>
     )
 }

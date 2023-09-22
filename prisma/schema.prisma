@@ -36,14 +36,14 @@ model Session {
 
 model User {
   id            String    @id @default(cuid()) @map("_id")
-  name          String?
+  name          String?   @unique
   email         String    @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
-  posts      Post[]
-  comments     Comment[]
+  posts         Post[]
+  comments      Comment[]
 }
 
 model VerificationToken {
@@ -63,16 +63,17 @@ model Category {
 }
 
 model Post {
-  id          String    @id @default(cuid()) @map("_id")
-  slug        String    @unique 
+  id          String      @id @default(cuid()) @map("_id")
+  slug        String      @unique 
   title       String
+  createdAt   DateTime?   @default(now())
   description String
   img         String?
-  views       Int       @default(0)
+  views       Int         @default(0)
   catSlug     String
-  cat         Category  @relation(fields: [catSlug], references: [slug])
-  userEmail   String    @unique
-  user        User      @relation(fields: [userEmail], references: [email])
+  cat         Category    @relation(fields: [catSlug], references: [slug])
+  userName    String 
+  user        User        @relation(fields: [userName], references: [name])
   comments    Comment[]
 }
 

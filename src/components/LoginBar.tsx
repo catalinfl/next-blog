@@ -4,8 +4,6 @@ import React from 'react'
 import { BsFacebook, BsGithub } from 'react-icons/bs'
 import { FcGoogle } from "react-icons/fc"
 
-
-
 const LoginBar = () => {
   return (
     <div className="flex flex-col bg-white mx-auto max-w-[1080px] h-[720px] gap-4 items-center justify-center border-4 my-4 p-4">

@@ -4,6 +4,7 @@ import Pagination from './Pagionation'
 
 type WallProps = {
   page: number
+  category?: string
 }
 
 export type PostWallProps = {
@@ -17,8 +18,9 @@ export type PostWallProps = {
     createdAt: Date
   }  
 
-const getPosts = async (page: number) => {
-    const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
+const getPosts = async (page: number, category: string) => {
+  if (category !== undefined) {
+    const res = await fetch(`http://localhost:3000/api/posts?page=${page}&category=${category}`, {
         method: "GET",
         cache: "no-cache"
     })
@@ -26,14 +28,18 @@ const getPosts = async (page: number) => {
       throw new Error(JSON.stringify(!res.ok))
     }
     
-    return res.json()
-
+    return res.json()  
+  }
+  const res = await fetch(`http://localhost:3000/api/posts?page=${page}`, {
+      method: "GET",
+      cache: "no-cache"
+  })
+  
+  return res.json()
 }
 
-
-
-const Wall = async ({ page }: WallProps) => {
-  const { posts, count } = await getPosts(page)
+const Wall = async ({ page, category }: WallProps) => {
+  const { posts, count } = await getPosts(page, category as string)
     
   return (
     <div className="flex flex-[5] flex-col gap-4 mt-4">

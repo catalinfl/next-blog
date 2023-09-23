@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { PostWallProps } from './Wall'
+import Link from 'next/dist/client/link'
 
 
 type PostType = {
@@ -12,7 +13,8 @@ const Post = ({ post }: PostType) => {
   const formatData = new Date(post.createdAt).toLocaleString()
 
   return (
-    <div className="bg-white p-4 flex-col">
+    <div className="bg-white p-4 flex-col cursor-pointer">
+      <Link href={'/posts/' + post.slug}> 
         <div className="flex flex-col">
             <p className="font-bold text-gray-600 pl-4 text-[1.5rem] cursor-pointer"> 
                 {post.title}
@@ -26,6 +28,7 @@ const Post = ({ post }: PostType) => {
               <p> {post.description} </p>
             </div>
         </div>
+      </Link>
     </div>
     )
 }

@@ -5,7 +5,8 @@ import Recent from '@/components/Recent'
 import Wall from '@/components/Wall'
 
 type Params = {
-  page: string
+  page: string,
+  category: string
 }
 
 type SearchParams = {
@@ -14,7 +15,10 @@ type SearchParams = {
 
 export default function Home({ searchParams }: SearchParams) {
   const page = parseInt(searchParams.page) || 1
-  console.log(page)
+  const category = searchParams?.category
+  
+  console.log(category)
+  
   return (
     <> 
     <Navbar />

@@ -1,8 +1,9 @@
 import React from 'react'
 import RecentPost from './RecentPost'
-
+import Link from "next/link"
 export type RecentPostsType = {
   title: string,
+  slug: string,
   createdAt: string,
   _id: string
 }
@@ -29,7 +30,9 @@ const Recent = async () => {
     { recentPosts.map((post: RecentPostsType) => {
       return (
       <div key={post._id}> 
+        <Link href="/posts/[slug]" as={`/posts/${post.slug}`}>
         <RecentPost post={post}/>
+        </Link>
       </div>
       )    
     })

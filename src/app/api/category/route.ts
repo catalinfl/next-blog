@@ -6,7 +6,7 @@ export const GET = async () => {
         const categories = await prisma.category.findMany()
         
         const catmod = categories.map((category) => {
-            const randomN = Math.floor(Math.random() * 6)
+            const randomN = Math.floor(Math.random() * 5)
             console.log(randomN)
             var getColour = ""
             switch (randomN) {
@@ -23,15 +23,13 @@ export const GET = async () => {
                     getColour = "accent"
                     break;
                 case 4:
-                    getColour = "accent"
-                    break
-                case 5:
                     getColour = "ghost"
                     break
             }
             return { ...category, colour: getColour}
         })
         
+
         return new NextResponse(JSON.stringify(catmod), { status: 200 })
     }
     catch(err) {

@@ -1,4 +1,4 @@
-import NextAuth from "next-auth"
+import NextAuth, { getServerSession } from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 import FacebookProvider from "next-auth/providers/facebook"
@@ -7,7 +7,7 @@ import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient() 
 
-const handler = NextAuth({
+const authOptions = {
     adapter: PrismaAdapter(prisma),
     providers: [
         GithubProvider({
@@ -23,6 +23,10 @@ const handler = NextAuth({
             clientSecret: process.env.FACEBOOK_CLIENT_SECRET as string
         })
     ]
-})
+}
+
+const handler = NextAuth(authOptions)
+
+export const getAuthSession = () => getServerSession(authOptions)
 
 export { handler as GET, handler as POST }

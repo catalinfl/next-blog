@@ -17,8 +17,6 @@ export default function Home({ searchParams }: SearchParams) {
   const page = parseInt(searchParams.page) || 1
   const category = searchParams?.category
   
-  console.log(category)
-  
   return (
     <> 
     <Navbar />

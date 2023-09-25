@@ -26,8 +26,6 @@ const getCategories = async () => {
 
 const Categories = async () => {
   const categories = await getCategories()
-  const colour = categories[0].colour
-  console.log(colour)
   return (
     <div className="bg-white p-6 rounded-sm">
       <> 

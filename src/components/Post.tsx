@@ -22,7 +22,7 @@ const Post = ({ post }: PostType) => {
              <p className="text-gray-300 text-right text-[0.85rem] mt-2"> Author: {post.userName} </p>
              <p className="text-gray-300 text-right text-[0.85rem]"> {formatData} </p>
             <div className="flex justify-center p-4"> 
-            <Image src={post.img ?? "/image.jpg"} className="cursor-pointer" alt="wall image" width="700" height="400"/>
+            <Image src={post.img ?? "/image.jpg"} className="cursor-pointer" alt="wall image" style={{objectFit: 'contain'}} width="700" height="400"/>
             </div>
             <div className="mt-1 px-4 cursor-pointer">
               <p> {post.description} </p>

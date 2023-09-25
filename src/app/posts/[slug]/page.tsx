@@ -36,7 +36,7 @@ const SinglePage = async ({params}: SearchParams) => {
         <p className="text-gray-500 text-[0.9rem] text-right mb-4"> Author: {info.user.name} </p>
       </div>
       <div className="image justify-center flex">
-      <Image src={info.image ?? "/image.jpg"} alt="photo" width="800" height="400"/>
+      <Image src={info.img ?? "/image.jpg"} alt="photo" width="800" height="400"/>
       </div>
       <div className="description mt-4">
         <p> {info.description} </p>

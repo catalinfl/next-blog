@@ -29,7 +29,6 @@ export const GET = async () => {
             return { ...category, colour: getColour}
         })
         
-
         return new NextResponse(JSON.stringify(catmod), { status: 200 })
     }
     catch(err) {

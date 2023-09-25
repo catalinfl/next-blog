@@ -10,8 +10,8 @@ const RecentPost = ({post}: RecentProps) => {
     const recentData = new Date(post.createdAt).toLocaleString()
 
   return (
-    <div className="bg-white p-4 border flex">
-        <div className="flex flex-col">
+    <div className="bg-white p-4 flex w-full border">
+        <div className="flex flex-col w-full">
             <p className="font-medium text-gray-600 justify-left flex text-[1rem]"> 
                 {post.title}
              </p>
